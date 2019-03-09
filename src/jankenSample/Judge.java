@@ -114,6 +114,23 @@ public class Judge {
 		
 		Player winner	=	null;
 		
+		// player1から勝ち数を聞く
+		int player1WinCount = player1.getWinCount();
+		
+		// player2から勝ち数を聞く
+		int player2WinCount = player2.getWinCount();
+		
+		if(player1WinCount > player2WinCount) {
+			
+			// プレイヤー1の勝ち
+			winner = player1;
+		}else if(player1WinCount < player2WinCount) {
+			
+			// プレイヤー2の勝ち
+			winner = player2;
+		}
+		
+		// どちらでもない場合、引き分け
 		
 		return winner;
 	}
@@ -141,7 +158,6 @@ public class Judge {
 		
 		default:
 			break;
-		
 		}
 		
 	}
