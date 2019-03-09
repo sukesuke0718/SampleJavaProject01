@@ -1,5 +1,5 @@
 /**
- * 
+ * ジャンケン
  */
 package jankenSample;
 
