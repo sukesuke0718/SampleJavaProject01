@@ -22,7 +22,7 @@ public class Player {
 	//-----------------------------
 	// プレイヤーのクラスのコンストラクタ
 	//-----------------------------	
-	public	Player(String	name) {
+	public Player(String name) {
 		name_	=	name;
 	}
 	
@@ -35,7 +35,7 @@ public class Player {
 	 * 
 	 * @return	ジャンケンの手
 	 */
-	public	int	showHand() {
+	public int showHand() {
 		
 		//	プレイヤーの手
 		int	hand	=	0;
@@ -43,15 +43,15 @@ public class Player {
 		//	0.0以上3.0未満の小数を乱数として取得する
 		double	randamNum	=	Math.random()	*	3;
 		
-		if(randamNum	<	1) {		
+		if(randamNum < 1) {		
 			//	randamNumが0.0以上1.0未満の場合グーを返す
 			hand	=	GC_STONE_I;
 			
-		}else	if(randamNum	<	2) {
+		}else if(randamNum < 2) {
 			//	randamNumが1.0以上2.0未満の場合チョキを返す
 			hand	=	GC_SCISSORS_I;
 			
-		}else	if(randamNum	<	3) {
+		}else if(randamNum < 3) {
 			//	randamNumが2.0以上3.0未満の場合パーを返す
 			hand	=	GC_PAPER_I;
 		}
@@ -66,9 +66,9 @@ public class Player {
 	 * 
 	 * @param	result	true:勝ち,false：負け
 	 */
-	public	void	notifyResult(boolean	result) {
+	public void notifyResult(boolean result) {
 		
-		if(result	==	true) {
+		if(result == true) {
 			// 勝った場合は勝ち数を加算する
 			winCount_	++;
 		}
@@ -79,7 +79,7 @@ public class Player {
 	 * 
 	 * @return 勝った回数
 	 */
-	public	int	getWinCount() {
+	public int getWinCount() {
 		return	winCount_;
 	}
 	
@@ -88,10 +88,8 @@ public class Player {
 	 * 
 	 * @return	名前
 	 */
-	public	String	getName() {
+	public String getName() {
 		return	name_;
 	}
-	
-	
 	
 }
