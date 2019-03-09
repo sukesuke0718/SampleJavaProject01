@@ -80,9 +80,9 @@ public class Judge {
 		
 		// それぞれの手を表示する
 		printHand(player1hand);
-		System.out.println(" vs. ");
+		System.out.print(" vs. ");
 		printHand(player2hand);
-		System.out.println("\n");
+		System.out.print("\n");
 		
 		//プレイヤー1が勝つ場合
 		if((player1hand == Player.GC_STONE_I && player2hand == Player.GC_SCISSORS_I)
@@ -145,15 +145,15 @@ public class Judge {
 		switch(hand) {
 		
 		case Player.GC_STONE_I:
-			System.out.println("グー");
+			System.out.print("グー");
 			break;
 			
 		case Player.GC_SCISSORS_I:
-			System.out.println("チョキ");
+			System.out.print("チョキ");
 			break;
 			
 		case Player.GC_PAPER_I:
-			System.out.println("パー");
+			System.out.print("パー");
 			break;
 		
 		default:
