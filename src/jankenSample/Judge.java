@@ -125,8 +125,24 @@ public class Judge {
 	 */
 	private void printHand(int hand) {
 		
+		switch(hand) {
 		
+		case Player.GC_STONE_I:
+			System.out.println("グー");
+			break;
+			
+		case Player.GC_SCISSORS_I:
+			System.out.println("チョキ");
+			break;
+			
+		case Player.GC_PAPER_I:
+			System.out.println("パー");
+			break;
 		
+		default:
+			break;
+		
+		}
 		
 	}
 	
