@@ -1,4 +1,4 @@
 # SampleJavaProject01
 
-jankenSample 
+jankenSample  
 ジャンケンプログラムを作成しました
