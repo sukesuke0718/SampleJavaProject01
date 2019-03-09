@@ -1,5 +1,5 @@
 /**
- * 
+ * じゃんけん
  */
 package jankenSample;
 
@@ -9,11 +9,19 @@ package jankenSample;
  */
 public class ObjectJanken {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+
+		// 審判のインスタンスを作成
+		Judge judge = new Judge();
+		
+		// プレイヤー1のインスタンスを作成
+		Player player1 = new Player("みやこさん");
+		
+		// プレイヤー2のインスタンスを作成
+		Player player2 = new Player("こうこさん");
+		
+		// ジャンケンを開始する
+		judge.startJanken(player1, player2);
 
 	}
 
