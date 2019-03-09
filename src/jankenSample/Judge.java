@@ -73,11 +73,32 @@ public class Judge {
 		Player winner	=	null;
 		
 		// プレイヤー1の手を出す
+		int player1hand = player1.showHand();
 		
 		// プレイヤー2の手を出す
+		int player2hand = player2.showHand();
 		
+		// それぞれの手を表示する
+		printHand(player1hand);
+		System.out.println(" vs. ");
+		printHand(player2hand);
+		System.out.println("\n");
 		
+		//プレイヤー1が勝つ場合
+		if((player1hand == Player.GC_STONE_I && player2hand == Player.GC_SCISSORS_I)
+			|| (player1hand == Player.GC_SCISSORS_I && player2hand == Player.GC_PAPER_I) 
+			|| (player1hand == Player.GC_PAPER_I && player2hand == Player.GC_STONE_I)) {
+			
+			winner = player1;
+		}else if((player1hand == Player.GC_STONE_I && player2hand == Player.GC_PAPER_I)
+				 || (player1hand == Player.GC_SCISSORS_I && player2hand == Player.GC_STONE_I)
+				 || (player1hand == Player.GC_PAPER_I && player2hand == Player.GC_SCISSORS_I)) {
+			
+			winner = player2;
+			
+		}
 		
+		//どちらでもない場合はnull
 		
 		return winner;
 	}
@@ -102,7 +123,7 @@ public class Judge {
 	 * 
 	 * @param hand
 	 */
-	private void printeHand(int hand) {
+	private void printHand(int hand) {
 		
 		
 		
