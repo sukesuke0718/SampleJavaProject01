@@ -8,27 +8,39 @@ package jankenSample;
  * ジャンケンのプレイヤーを表すクラス。
  */
 public class Player {
-	// ジャンケンの手を表す定数
-	public	static	final	int	GC_STONE_I		=	0;	// グー
-	public	static	final	int	GC_SCISSORS_I	=	1;	// チョキ
-	public	static	final	int	GC_PAPER_I		=	2;	// パー
+	//	ジャンケンの手を表す定数
+	public	static	final	int	GC_STONE_I		=	0;	//	グー
+	public	static	final	int	GC_SCISSORS_I	=	1;	//	チョキ
+	public	static	final	int	GC_PAPER_I		=	2;	//	パー
 	
 	//-----------------------------
-	// プレイヤーの属性
+	//	プレイヤーの属性
 	//-----------------------------
-	private	String name_;		// プライヤーの名前
-	private	int winCount_;		// プレイヤーの勝った回数
+	private	String name_;		//	プライヤーの名前
+	private	int winCount_;		//	プレイヤーの勝った回数
 	
 	//-----------------------------
-	// プレイヤーのクラスのコンストラクタ
+	//	プレイヤーのクラスのコンストラクタ
 	//-----------------------------	
 	public Player(String name) {
 		name_	=	name;
 	}
 	
 	//-----------------------------
-	// プレイヤークラスの操作
+	//	プレイヤークラスの操作
 	//-----------------------------	
+	
+	private Tactics tactics_;
+	
+	/*
+	 * プレイヤーに戦略を渡す
+	 * 
+	 * @param tactics
+	 */
+	void setTactics(Tactics tactics) {
+		
+		tactics_ = tactics;
+	}
 	
 	/*
 	 * ジャンケンの手を出す
@@ -37,39 +49,22 @@ public class Player {
 	 */
 	public int showHand() {
 		
-		//	プレイヤーの手
-		int	hand	=	0;
+		//	与えられた戦略を読んでジャンケンの手を決める
+		int hand = tactics_.readTactics();
 		
-		//	0.0以上3.0未満の小数を乱数として取得する
-		double	randamNum	=	Math.random()	*	3;
-		
-		if(randamNum < 1) {		
-			//	randamNumが0.0以上1.0未満の場合グーを返す
-			hand	=	GC_STONE_I;
-			
-		}else if(randamNum < 2) {
-			//	randamNumが1.0以上2.0未満の場合チョキを返す
-			hand	=	GC_SCISSORS_I;
-			
-		}else if(randamNum < 3) {
-			//	randamNumが2.0以上3.0未満の場合パーを返す
-			hand	=	GC_PAPER_I;
-		}
-			
-		//	決定した手を戻値として返す
-		return	hand;
+		return hand;
 		
 	}
 	
 	/*
-	 * 新刊から勝敗を聞く
+	  * 審判から勝敗を聞く
 	 * 
 	 * @param	result	true:勝ち,false：負け
 	 */
 	public void notifyResult(boolean result) {
 		
 		if(result == true) {
-			// 勝った場合は勝ち数を加算する
+			//	勝った場合は勝ち数を加算する
 			winCount_	++;
 		}
 	}
