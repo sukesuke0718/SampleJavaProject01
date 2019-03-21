@@ -18,7 +18,7 @@ public class ObjectJanken {
 		//	プレイヤー1のインスタンスを作成
 		Player player1 = new Player("みやこさん");
 		//	戦略クラスを作成する
-		Tactics player1Tactics = new RandomTactics();
+		Tactics player1Tactics = new AskTactics();
 		//	戦略クラスを渡す
 		player1.setTactics(player1Tactics);
 		
